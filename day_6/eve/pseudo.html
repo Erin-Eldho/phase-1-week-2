@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pseudo-Classes & Pseudo-Elements</title>
+
+        <style>
+            nav a:hover {
+                color: red;
+            }
+
+            /* :focus applies whenever an element receives focus.
+            :focus-visible shows focus styling when the browser determines
+            it is needed, commonly during keyboard navigation. */
+            nav a:focus-visible {
+                outline: 2px solid blue;
+            }
+
+            input[type="checkbox"] {
+                appearance: none;
+            }
+
+            input[type="checkbox"] + label::before {
+                content: "";
+                display: inline-block;
+                width: 12px;
+                height: 12px;
+                border: 1px solid black;
+            }
+
+            input[type="checkbox"]:checked + label::before {
+                content: "\2713";
+                display: grid;
+                place-content: center;
+            }
+
+            ol {
+                counter-reset: item;
+            }
+
+            li {
+                counter-increment: item;
+                list-style: none;
+            }
+
+            li::before {
+                content: counter(item) ". ";
+            }
+
+            .tooltip {
+                position: relative;
+            }
+
+            .tooltip::after {
+                content: attr(data-tooltip);
+                position: absolute;
+                visibility: hidden;
+            }
+
+            .tooltip:hover::after {
+                visibility: visible;
+            }
+        </style>
+    </head>
+    <body>
+
+        <h1>Pseudo-Classes & Pseudo-Elements</h1>
+
+        <h2>1. Navigation Bar</h2>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <h2>2. Custom Checkbox</h2>
+        <input type="checkbox" id="agree">
+        <label for="agree">I agree to the terms</label>
+
+        <h2>3. Numbered List Using CSS Counters</h2>
+        <ol>
+            <li>Learn HTML</li>
+            <li>Learn CSS</li>
+            <li>Learn JavaScript</li>
+        </ol>
+
+        <h2>4. Pure CSS Tooltip</h2>
+        <p class="tooltip" data-tooltip="This is a tooltip">
+            Hover over this text
+        </p>
+
+    </body>
+</html>
