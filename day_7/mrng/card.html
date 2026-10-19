@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Card Component System</title>
+        <style>
+            .card-grid{
+                display: flex;
+                flex-wrap: wrap;
+                gap: 2rem;
+            }
+            .card{
+                display: flex;
+                flex-direction: column;
+                flex: 1 1 calc(33.333% - 2rem);
+                border: 1px solid #ccc;
+            }
+            .card img{
+                width: 100%;
+            }
+            .card-content{
+                display: flex;
+                flex-direction: column;
+                flex: 1;
+                padding: 1rem;
+            }
+            .tags{
+                display: flex;
+                gap: 0.5rem;
+            }
+            .card-footer{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: auto;
+            }
+            .horizontal-card{
+                display: flex;
+                flex-direction: row;
+                margin-bottom: 2rem;
+            }
+            .horizontal-card img{
+                width: 160px;
+                object-fit: cover;
+                flex-shrink: 0;
+            }
+            @media (max-width: 600px) {
+                .horizontal-card{
+                    flex-direction: column;
+                }
+                .horizontal-card img {
+                    width: 100%;
+                }
+            }
+            @media (max-width: 700px) {
+                .card{
+                    flex-basis: calc(50% - 2rem);
+                }
+            }
+            @media (max-width: 480px){
+                .card{
+                    flex-basis: 100%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Card Component System</h1>
+
+        <h2>Horizontal Card</h2>
+        <div class="card horizontal-card">
+            <img src="https://placehold.co/160x160" alt="Product">
+            <div class="card-content">
+                <h3>Product 1</h3>
+                <p>A product description.</p>
+                <div class="tags">
+                    <span>Product</span>
+                    <span>Featured</span>
+                </div>
+                <div class="card-footer">
+                    <span>Rs 999</span>
+                    <button type="button">Buy Now</button>
+                </div>
+            </div>
+        </div>
+
+        <h2>Card Grid</h2>
+        <div class="card-grid">
+            <div class="card">
+                <img src="https://placehold.co/400x200" alt="Product 1">
+                <div class="card-content">
+                    <h3>Product 1</h3>
+                    <p>A product description.</p>
+                    <div class="tags">
+                        <span>New</span>
+                        <span>Popular</span>
+                    </div>
+                    <div class="card-footer">
+                        <span>Rs 999</span>
+                        <button type="button">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://placehold.co/400x200" alt="Product 2">
+                <div class="card-content">
+                    <h3>Product 2</h3>
+                    <p>A product description with some additional text.</p>
+                    <div class="tags">
+                        <span>Sale</span>
+                        <span>Popular</span>
+                    </div>
+                    <div class="card-footer">
+                        <span>Rs 1299</span>
+                        <button type="button">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://placehold.co/400x200" alt="Product 3">
+                <div class="card-content">
+                    <h3>Product 3</h3>
+                    <p>A product description.</p>
+                    <div class="tags">
+                        <span>New</span>
+                        <span>Featured</span>
+                    </div>
+                    <div class="card-footer">
+                        <span>Rs 799</span>
+                        <button type="button">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://placehold.co/400x200" alt="Product 4">
+                <div class="card-content">
+                    <h3>Product 4</h3>
+                    <p>A product description.</p>
+                    <div class="tags">
+                        <span>Sale</span>
+                        <span>New</span>
+                    </div>
+                    <div class="card-footer">
+                        <span>Rs 1499</span>
+                        <button type="button">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://placehold.co/400x200" alt="Product 5">
+                <div class="card-content">
+                    <h3>Product 5</h3>
+                    <p>A longer product description to demonstrate different content lengths.</p>
+                    <div class="tags">
+                        <span>Popular</span>
+                        <span>Sale</span>
+                    </div>
+                    <div class="card-footer">
+                        <span>Rs 599</span>
+                        <button type="button">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://placehold.co/400x200" alt="Product 6">
+                <div class="card-content">
+                    <h3>Product 6</h3>
+                    <p>A product description.</p>
+                    <div class="tags">
+                        <span>Featured</span>
+                        <span>New</span>
+                    </div>
+                    <div class="card-footer">
+                        <span>Rs 1099</span>
+                        <button type="button">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
