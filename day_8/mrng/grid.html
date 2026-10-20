@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Grid Sizing Methods</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 20px;
+                font-family: Arial, sans-serif;
+                color: #333;
+            }
+
+            section {
+                margin-bottom: 30px;
+            }
+
+            h2 {
+                font-size: 18px;
+            }
+
+            .grid {
+                display: grid;
+                padding: 10px;
+                background-color: #f0f0f0;
+            }
+
+            .grid > div {
+                padding: 15px;
+                text-align: center;
+                background-color: #c9def5;
+                border: 1px solid #7ba7d8;
+            }
+
+            .fixed {
+                grid-template-columns: 100px 150px 200px;
+            }
+
+            .percentage {
+                grid-template-columns: 25% 50% 25%;
+            }
+
+            .fractions {
+                grid-template-columns: 1fr 2fr 1fr;
+            }
+
+            .auto {
+                grid-template-columns: auto auto auto;
+            }
+
+            .minmax {
+                grid-template-columns: repeat(3, minmax(200px, 1fr));
+            }
+
+            .repeat {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .auto-fill {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+
+            .implicit {
+                grid-template-columns: repeat(3, 1fr);
+                grid-auto-rows: minmax(100px, auto);
+            }
+
+            .column-gap {
+                grid-template-columns: repeat(3, 1fr);
+                column-gap: 30px;
+            }
+
+            .row-gap {
+                grid-template-columns: repeat(3, 1fr);
+                row-gap: 20px;
+            }
+
+            .gap {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px 30px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <h1>Grid Sizing Methods</h1>
+        <section>
+            <h2>1. Fixed pixel columns</h2>
+            <div class="grid fixed">
+                <div>Column 1</div>
+                <div>Column 2</div>
+                <div>Column 3</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>2. Percentage columns</h2>
+            <div class="grid percentage">
+                <div>25%</div>
+                <div>50%</div>
+                <div>25%</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>3. Fractional units (1fr 2fr 1fr)</h2>
+            <div class="grid fractions">
+                <div>1fr</div>
+                <div>2fr</div>
+                <div>1fr</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>4. Auto columns</h2>
+            <div class="grid auto">
+                <div>Short</div>
+                <div>Medium content</div>
+                <div>Longer content in this column.</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>5. minmax(200px, 1fr)</h2>
+            <div class="grid minmax">
+                <div>Column 1</div>
+                <div>Column 2</div>
+                <div>Column 3</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>6. repeat(3, 1fr)</h2>
+            <div class="grid repeat">
+                <div>Column 1</div>
+                <div>Column 2</div>
+                <div>Column 3</div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>7. repeat(auto-fill, minmax(200px, 1fr))</h2>
+            <div class="grid auto-fill">
+                <div>Item 1</div>
+                <div>Item 2</div>
+                <div>Item 3</div>
+                <div>Item 4</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>8. Implicit grid rows</h2>
+            <div class="grid implicit">
+                <div>Item 1</div>
+                <div>Item 2</div>
+                <div>Item 3</div>
+                <div>Item 4</div>
+                <div>Item 5</div>
+                <div>Item 6</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>9. Column gap</h2>
+            <div class="grid column-gap">
+                <div>Item 1</div>
+                <div>Item 2</div>
+                <div>Item 3</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>10. Row gap</h2>
+            <div class="grid row-gap">
+                <div>Item 1</div>
+                <div>Item 2</div>
+                <div>Item 3</div>
+                <div>Item 4</div>
+                <div>Item 5</div>
+                <div>Item 6</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>11. Gap shorthand</h2>
+            <div class="grid gap">
+                <div>Item 1</div>
+                <div>Item 2</div>
+                <div>Item 3</div>
+                <div>Item 4</div>
+                <div>Item 5</div>
+                <div>Item 6</div>
+            </div>
+        </section>
+    </body>
+</html>

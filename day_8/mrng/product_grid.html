@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Responsive Product Grid</title>
+        <style>              
+            body {
+                margin: 0;
+                padding: 20px;
+                font-family: Arial, sans-serif;
+                color: #302b40;
+                background-color: #f7f5fa;
+            }
+
+            section {
+                margin-bottom: 35px;
+            }
+
+            .products {
+                display: grid;
+                gap: 16px;
+            }
+
+            .responsive {
+                grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+            }
+
+            .product {
+                padding: 20px;
+                border: 1px solid #d9d2e5;
+                border-radius: 8px;
+                background-color: white;
+            }
+
+            .product h3 {
+                margin-top: 0;
+                color: #49376b;
+            }
+
+            .product strong {
+                color: #60458b;
+            }
+
+            .featured {
+                grid-column: span 2;
+                grid-row: span 2;
+                background-color: #e9e0f5;
+            }
+
+            .featured span {
+                font-weight: bold;
+            }
+
+            .last-item {
+                grid-column: auto / -1;
+            }
+
+            .comparison {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                min-height: 140px;
+                padding: 15px;
+                background-color: #e9e5ef;
+            }
+
+            .auto-fill {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+
+            .auto-fit {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Responsive Product Grid</h1>
+
+        <section>
+            <h2>1. Responsive grid with auto-fill</h2>
+            <div class="products responsive">
+                <article class="product featured">
+                    <span>Featured</span>
+                    <h3>Smartphone</h3>
+                    <p>Latest technology in your hands.</p>
+                    <strong>$699</strong>
+                </article>
+                <article class="product">
+                    <h3>Headphones</h3>
+                    <p>Immersive audio experience.</p>
+                    <strong>$129</strong>
+                </article>
+                <article class="product">
+                    <h3>Smartwatch</h3>
+                    <p>Stay connected throughout the day.</p>
+                    <strong>$199</strong>
+                </article>
+                <article class="product">
+                    <h3>Camera</h3>
+                    <p>Capture every moment.</p>
+                    <strong>$499</strong>
+                </article>
+                <article class="product">
+                    <h3>Speaker</h3>
+                    <p>Powerful sound in a compact design.</p>
+                    <strong>$89</strong>
+                </article>
+                <article class="product last-item">
+                    <h3>Tablet</h3>
+                    <p>Entertainment and productivity in one.</p>
+                    <strong>$349</strong>
+                </article>
+            </div>
+        </section>
+
+        <section>
+            <h2>2. auto-fill vs auto-fit</h2>
+
+            <h3>auto-fill</h3>
+            <div class="products comparison auto-fill">
+                <article class="product">Product 1</article>
+                <article class="product">Product 2</article>
+            </div>
+
+            <h3>auto-fit</h3>
+            <div class="products comparison auto-fit">
+                <article class="product">Product 1</article>
+                <article class="product">Product 2</article>
+            </div>
+        </section>
+    </body>
+</html>
