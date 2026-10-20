@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Holy Grail Layout</title>
+        <style>
+            *{
+                box-sizing: border-box;
+            }
+            .wrapper{
+                display: flex;
+                flex-direction: column;
+                min-height: 100vh;
+            }
+            header,footer{
+                padding: 20px;
+                background-color: lightblue;
+            }
+            .middle{
+                display: flex;
+                flex: 1;
+            }
+            .sidebar{
+                width: 200px;
+                flex-shrink: 0;
+                padding: 20px;
+                background-color: bisque;
+            }
+            main{
+                flex: 1;
+                padding: 20px;
+            }
+            aside{
+                width: 200px;
+                flex-shrink: 0;
+                padding: 20px;
+                background-color: bisque;
+            }
+            @media(max-width: 600px) {
+                .middle{
+                    flex-direction: column;
+                }
+                main {
+                    order: 1;
+                }
+                .sidebar{
+                    order: 2;
+                }
+                aside{
+                    order: 3;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <header>
+                <h1>Header</h1>
+            </header>
+
+            <div class="middle">
+                <nav class="sidebar">
+                    <h2>Left Sidebar</h2>
+                </nav>
+
+                <main>
+                    <h2>Main Content</h2>
+                    <p>This is the main content area. It grows to fill the remaining place.</p>
+                </main>
+
+                <aside>
+                    <h2>Right Aside</h2>
+                </aside>
+            </div>
+
+            <footer>
+                <p>Footer</p>
+            </footer>
+        </div>
+    </body>
+</html>
