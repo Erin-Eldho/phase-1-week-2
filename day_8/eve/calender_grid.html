@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CSS Grid Calendar</title>
+        <style>                      
+            :root {
+                --color-primary: #2563eb;
+                --color-background: #f1f5f9;
+                --color-surface: #ffffff;
+                --color-text: #1e293b;
+                --color-border: #e2e8f0;
+                --color-event: #dbeafe;
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+
+            body {
+                margin: 0;
+                padding: 20px;
+                font-family: Arial, sans-serif;
+                background-color: var(--color-background);
+                color: var(--color-text);
+            }
+
+            .calendar {
+                max-width: 1000px;
+                margin: 0 auto;
+            }
+
+            h1 {
+                text-align: center;
+            }
+
+            .calendar-grid {
+                display: grid;
+                grid-template-columns: 55px repeat(7, 1fr);
+                gap: 5px;
+            }
+
+            .week-header,
+            .day-header {
+                padding: 12px 5px;
+                background-color: var(--color-primary);
+                color: white;
+                text-align: center;
+                font-weight: bold;
+            }
+
+            .week-number {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: #e2e8f0;
+                font-size: 13px;
+            }
+
+            .day {
+                position: relative;
+                min-height: 85px;
+                padding: 10px;
+                background-color: var(--color-surface);
+                border: 1px solid var(--color-border);
+            }
+
+            .empty {
+                background-color: #e9edf3;
+            }
+
+            .event {
+                background-color: var(--color-event);
+                border-color: var(--color-primary);
+            }
+
+            .today::before {
+                content: "";
+                position: absolute;
+                top: 4px;
+                left: 4px;
+                width: 30px;
+                height: 30px;
+                border: 2px solid var(--color-primary);
+                border-radius: 50%;
+            }
+
+            .today {
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <main class="calendar">
+            <h1>October 2026</h1>
+
+            <div class="calendar-grid">
+                <div class="week-header">Week</div>
+                <div class="day-header">Mon</div>
+                <div class="day-header">Tue</div>
+                <div class="day-header">Wed</div>
+                <div class="day-header">Thu</div>
+                <div class="day-header">Fri</div>
+                <div class="day-header">Sat</div>
+                <div class="day-header">Sun</div>
+
+                <div class="week-number">40</div>
+                <div class="day empty"></div>
+                <div class="day empty"></div>
+                <div class="day empty"></div>
+                <div class="day">1</div>
+                <div class="day">2</div>
+                <div class="day event">3</div>
+                <div class="day">4</div>
+
+                <div class="week-number">41</div>
+                <div class="day">5</div>
+                <div class="day">6</div>
+                <div class="day">7</div>
+                <div class="day">8</div>
+                <div class="day event">9</div>
+                <div class="day">10</div>
+                <div class="day">11</div>
+
+                <div class="week-number">42</div>
+                <div class="day">12</div>
+                <div class="day">13</div>
+                <div class="day">14</div>
+                <div class="day">15</div>
+                <div class="day">16</div>
+                <div class="day event">17</div>
+                <div class="day">18</div>
+
+                <div class="week-number">43</div>
+                <div class="day">19</div>
+                <div class="day">20</div>
+                <div class="day today">21</div>
+                <div class="day">22</div>
+                <div class="day">23</div>
+                <div class="day">24</div>
+                <div class="day event">25</div>
+
+                <div class="week-number">44</div>
+                <div class="day">26</div>
+                <div class="day">27</div>
+                <div class="day">28</div>
+                <div class="day">29</div>
+                <div class="day">30</div>
+                <div class="day">31</div>
+                <div class="day empty"></div>
+            </div>
+        </main>
+    </body>
+</html>
