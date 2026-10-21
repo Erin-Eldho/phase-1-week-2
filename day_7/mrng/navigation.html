@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Navigation Bar</title>
+        <style>
+            .navbar{
+                display: flex;
+                align-items: center;
+                position: sticky;
+                top:    0;
+                z-index: 100;
+                padding: 15px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+                background-color: lightgrey;
+            }
+            .logo{
+                font-weight: bold;
+            }
+            nav{
+                flex: 1;
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+            }
+            nav a{
+                text-decoration: none;
+                color: black;
+            }
+            nav a:hover,
+            nav a:focus-visible{
+                color: blue;
+                text-decoration: underline;
+            }
+            .actions{
+                display: flex;
+                gap: 10px;
+                margin-left: auto;
+            }
+            .hamburger{
+                display: none;
+            }
+            button:hover,
+            button:focus-visible{
+                background-color: lightcoral;
+            } 
+            @media(max-width: 768px) {
+                nav {
+                    display: none;
+                }
+                .hamburger{
+                    display: block;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header class="navbar">
+            <div class="logo">Logo</div>
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Services</a>
+                <a href="#">Contact</a>
+            </nav>
+            <div class="actions">
+                <button type="button">Login</button>
+                <button type="button">Sign Up</button>
+                <button type="button" class="hamburger" aria-label="Menu">&#9776;</button>
+            </div>
+        </header>
+    </body>
+</html>

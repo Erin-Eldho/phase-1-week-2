@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Magazine Layout</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 20px;
+                font-family: Arial, sans-serif;
+                line-height: 1.6;
+                color: #29253b;
+                background-color: #f5f3f8;
+            }
+
+            .magazine {
+                display: grid;
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+                grid-template-rows: auto auto 250px auto auto;
+                grid-template-areas:
+                    "header header header header"
+                    "nav nav nav nav"
+                    "hero hero hero ad"
+                    "article1 article1 article2 sidebar"
+                    "footer footer footer footer";
+                gap: 15px;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+
+            .header {
+                grid-area: header;
+                padding: 20px;
+                color: white;
+                background-color: #29253b;
+            }
+
+            .header h1,
+            .header p {
+                margin: 5px 0;
+            }
+
+            .nav {
+                grid-area: nav;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 25px;
+                padding: 15px 20px;
+                background-color: #e4dcef;
+            }
+
+            .nav a,
+            .article1 a,
+            .article2 a,
+            .sidebar a {
+                color: #514078;
+                text-decoration: none;
+            }
+
+            .nav a:hover,
+            .article1 a:hover,
+            .article2 a:hover,
+            .sidebar a:hover {
+                text-decoration: underline;
+            }
+
+            .hero {
+                grid-area: hero;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding: 25px;
+                color: white;
+                background-color: #65518b;
+            }
+
+            .hero h2,
+            .hero p {
+                margin: 5px 0;
+            }
+
+            .article1,
+            .article2,
+            .sidebar,
+            .ad {
+                padding: 20px;
+                background-color: white;
+                border: 1px solid #ded8e8;
+            }
+
+            .article1 {
+                grid-area: article1;
+            }
+
+            .article2 {
+                grid-area: article2;
+            }
+
+            .sidebar {
+                grid-area: sidebar;
+            }
+
+            .sidebar ul {
+                padding-left: 20px;
+            }
+
+            .ad {
+                grid-area: ad;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+                background-color: #e4dcef;
+            }
+
+            .footer {
+                grid-area: footer;
+                padding: 15px;
+                text-align: center;
+                color: white;
+                background-color: #29253b;
+            }
+
+            .footer p {
+                margin: 0;
+            }
+
+            @media (max-width: 899px) {
+                .magazine {
+                    grid-template-columns: repeat(2, minmax(0, 1fr));
+                    grid-template-rows: auto;
+                    grid-template-areas:
+                        "header header"
+                        "nav nav"
+                        "hero hero"
+                        "article1 article2"
+                        "sidebar ad"
+                        "footer footer";
+                }
+            }
+
+            @media (max-width: 599px) {
+                body {
+                    padding: 10px;
+                }
+
+                .magazine {
+                    grid-template-columns: 1fr;
+                    grid-template-areas:
+                        "header"
+                        "nav"
+                        "hero"
+                        "article1"
+                        "article2"
+                        "sidebar"
+                        "ad"
+                        "footer";
+                }
+
+                .nav {
+                    gap: 15px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="magazine">
+            <header class="header">
+                <h1>The Daily Edit</h1>
+                <p>Ideas, culture, and stories that matter.</p>
+            </header>
+
+            <nav class="nav" aria-label="Main navigation">
+                <a href="#">Home</a>
+                <a href="#">Culture</a>
+                <a href="#">Technology</a>
+                <a href="#">Lifestyle</a>
+            </nav>
+
+            <section class="hero">
+                <p>Featured Story</p>
+                <h2>The Future of technology</h2>
+                <p>Exploring the ideas shaping tomorrow's world.</p>
+            </section>
+
+            <article class="article1">
+                <h2>Inside the world of AI</h2>
+                <p>Discover how artificial intelligence is changing the way we live and work.</p>
+                <a href="#">Read more</a>
+            </article>
+
+            <article class="article2">
+                <h2>Design for everyday life</h2>
+                <p>How thoughtful design makes everyday experiences more useful and enjoyable.</p>
+                <a href="#">Read more</a>
+            </article>
+
+            <aside class="sidebar">
+                <h2>Trending</h2>
+                <ul>
+                    <li><a href="#">Emerging technologies</a></li>
+                    <li><a href="#">Modern design</a></li>
+                    <li><a href="#">Digital culture</a></li>
+                </ul>
+            </aside>
+
+            <aside class="ad">
+                <h2>Advertisement</h2>
+                <p>Discover something new.</p>
+            </aside>
+
+            <footer class="footer">
+                <p>&copy; 2026 The Daily Edit. All rights reserved.</p>
+            </footer>
+        </div>
+    </body>
+</html>

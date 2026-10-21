@@ -1,0 +1,143 @@
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+body > header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 20px;
+    background-color: lavenderblush;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+body > header h1,
+body > header p {
+    margin: 5px 0;
+}
+
+body > nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 15px;
+}
+
+body > nav a {
+    text-decoration: none;
+}
+
+.content-layout {
+    display: flex;
+    flex: 1;
+}
+
+.content-layout main {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 20px;
+    padding: 20px;
+    min-width: 0;
+}
+
+.content-layout main > h1 {
+    margin: 0;
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border: 1px solid #ccc;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+}
+
+article header {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+article section {
+    display: flex;
+    flex-direction: column;
+}
+
+article footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.content-layout aside {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 30%;
+    padding: 20px;
+    margin-top: 76px;
+    margin-bottom: 20px;
+    margin-right: 15px;
+    box-sizing: border-box;
+    background-color: #f0d2e7;
+}
+
+.content-layout aside nav {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.content-layout aside section {
+    display: flex;
+    flex-direction: column;
+}
+
+.content-layout aside ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-left: 20px;
+}
+
+body > footer {
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    background-color: #b2e2f1;
+}
+
+@media (max-width: 767px) {
+    body > header {
+        position: static;
+    }
+
+    .content-layout {
+        flex-direction: column;
+    }
+
+    .content-layout main,
+    .content-layout aside {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .content-layout aside {
+        margin: 0;
+    }
+
+    article footer {
+        flex-wrap: wrap;
+    }
+}

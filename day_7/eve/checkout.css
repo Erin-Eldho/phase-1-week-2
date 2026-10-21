@@ -1,0 +1,120 @@
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.form-row label {
+    width: 180px;
+    flex-shrink: 0;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+}
+
+.input-group input,
+.input-group select,
+.input-group textarea {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.paired-fields {
+    display: flex;
+    gap: 20px;
+}
+
+.paired-fields .form-row {
+    flex: 1;
+    min-width: 0;
+}
+
+.cvv-group {
+    display: flex;
+    align-items: flex-start;
+    flex: 1;
+    gap: 10px;
+    min-width: 0;
+}
+
+.cvv-group .input-group {
+    flex: 1;
+}
+
+#cvv-hint {
+    margin: 0;
+    white-space: nowrap;
+}
+
+.error-message {
+    display: none;
+    color: red;
+    font-size: 14px;
+}
+
+.input-group input:invalid:focus + .error-message,
+.input-group select:invalid:focus + .error-message {
+    display: block;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid blue;
+}
+
+input:invalid,
+select:invalid,
+textarea:invalid {
+    border: 1px solid red;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.form-buttons button[type="submit"]:hover {
+    background-color: lightgreen;
+}
+
+@media (max-width: 600px) {
+    .form-row {
+        flex-direction: column;
+    }
+
+    .form-row label {
+        width: 100%;
+    }
+
+    .paired-fields {
+        flex-direction: column;
+    }
+
+    .cvv-group {
+        flex-wrap: wrap;
+    }
+
+    #cvv-hint {
+        white-space: normal;
+    }
+}
