@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Interactive Components</title>
+        <link rel="stylesheet" href="components.css">
+    </head>
+    <body>
+        <main>
+            <h1>Interactive Components</h1>
+            <section>
+                <h2>Accordion</h2>
+                <div class="accordion">
+                    <input type="checkbox" id="accordion-toggle">
+                    <label for="accordion-toggle">What is CSS?</label>
+                    <div class="accordion-content">
+                        <p> CSS stands for Cascading Style Sheets. 
+                            It is used to style and layout web pages.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Tabs</h2>
+                <div class="tabs">
+                    <input type="radio" name="tab" id="tab1" checked>
+                    <input type="radio" name="tab" id="tab2">
+                    <input type="radio" name="tab" id="tab3">
+
+                    <div class="tab-labels">
+                        <label for="tab1">HTML</label>
+                        <label for="tab2">CSS</label>
+                        <label for="tab3">JavaScript</label>
+                    </div>
+
+                    <div class="tab-panels">
+                        <div class="tab-panel" id="panel1">
+                            <h3>HTML</h3>
+                            <p>HTML defines the structure of a web page.</p>
+                        </div>
+
+                        <div class="tab-panel" id="panel2">
+                            <h3>CSS</h3>
+                            <p>CSS controls the appearance of a web page.</p>
+                        </div>
+
+                        <div class="tab-panel" id="panel3">
+                            <h3>JavaScript</h3>
+                            <p>JavaScript adds behavior and interactivity to web pages.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Star Rating</h2>
+                <div class="rating">
+                    <input type="radio" name="rating" id="star5" value="5">
+                    <label for="star5" aria-label="5 stars"></label>
+
+                    <input type="radio" name="rating" id="star4" value="4">
+                    <label for="star4" aria-label="4 stars"></label>
+
+                    <input type="radio" name="rating" id="star3" value="3">
+                    <label for="star3" aria-label="3 stars"></label>
+
+                    <input type="radio" name="rating" id="star2" value="2">
+                    <label for="star2" aria-label="2 stars"></label>
+
+                    <input type="radio" name="rating" id="star1" value="1">
+                    <label for="star1" aria-label="1 star"></label>
+                </div>
+            </section>
+        </main>
+    </body>
+</html>
