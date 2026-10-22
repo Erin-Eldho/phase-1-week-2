@@ -1,13 +1,14 @@
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: var(--font-family);
     line-height: 1.6;
-    color: #252238;
+    color: var(--color-text);
+    background-color: var(--color-bg);
 }
 
 body > header {
     padding: 20px;
-    background-color: #211b38;
+    background-color: var(--color-primary);
 }
 
 body > header nav {
@@ -38,7 +39,7 @@ main section {
 
 main h1,
 main h2 {
-    color: #392b65;
+    color: var(--color-primary-darkest);
 }
 
 main dl dt {
@@ -53,8 +54,8 @@ main dl dd {
 main blockquote {
     margin: 0;
     padding: 20px;
-    border-left: 4px solid #8064a2;
-    background-color: #f7f3fb;
+    border-left: 4px solid var(--color-primary);
+    background-color: var(--color-primary-light);
 }
 
 .values-grid {
@@ -66,7 +67,7 @@ main blockquote {
 .values-grid article {
     flex: 1 1 200px;
     padding: 20px;
-    border: 1px solid #e2dbea;
+    border: 1px solid var(--color-border);
     border-radius: 8px;
 }
 
@@ -77,7 +78,7 @@ main address {
 .site-footer {
     padding: 40px 30px 0;
     color: #f5f2fc;
-    background-color: #211b38;
+    background-color: var(--color-primary-darkest);
 }
 
 .footer-content {
@@ -138,7 +139,7 @@ main address {
 }
 
 .social-icons a:hover {
-    background-color: #51416f;
+    background-color: var(--color-primary-dark);
 }
 
 .footer-bottom {
