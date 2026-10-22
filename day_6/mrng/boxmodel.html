@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Box Model</title>
+
+        <style>
+            .box1 {
+                background-color: lightblue;
+                margin: 10px;
+                padding: 10px;
+                border: 2px solid blue;
+            }
+
+            .box2 {
+                background-color: lightgreen;
+                margin: 20px;
+                padding: 20px;
+                border: 5px solid green;
+            }
+
+            .box3 {
+                background-color: lightyellow;
+                margin: 5px;
+                padding: 5px;
+                border: 3px dashed orange;
+            }
+
+            .box4 {
+                background-color: pink;
+                margin: 15px;
+                padding: 25px;
+                border: 4px solid red;
+            }
+
+            .box5 {
+                background-color: lavender;
+                margin: 25px;
+                padding: 15px;
+                border: 6px double purple;
+            }
+
+            .box6 {
+                background-color: lightcyan;
+                margin: 10px;
+                padding: 30px;
+                border: 2px solid teal;
+            }
+
+            .box7 {
+                background-color: peachpuff;
+                margin: 30px;
+                padding: 10px;
+                border: 8px solid brown;
+            }
+
+            .box8 {
+                background-color: lightgray;
+                margin: 5px;
+                padding: 20px;
+                border: 3px dotted black;
+            }
+
+            .width-box {
+                width: 300px;
+                padding: 20px;
+                border: 5px solid black;
+                margin-bottom: 15px;
+            }
+
+            .content-box {
+                box-sizing: content-box;
+                background-color: lightblue;
+            }
+
+            .border-box {
+                box-sizing: border-box;
+                background-color: lightgreen;
+            }
+
+            .collapse-one {
+                background-color: lightcoral;
+                margin-bottom: 30px;
+                padding: 20px;
+            }
+
+            .collapse-two {
+                background-color: lightseagreen;
+                margin-top: 20px;
+                padding: 20px;
+            }
+
+            .overlap-one {
+                background-color: steelblue;
+                color: white;
+                padding: 30px;
+                width: 250px;
+            }
+
+            .overlap-two {
+                background-color: tomato;
+                color: white;
+                padding: 30px;
+                width: 250px;
+                margin-top: -30px;
+                margin-left: 60px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>Box Model</h1>
+
+        <h2>1. Margin, Padding and Border</h2>
+
+        <div class="box1">Box 1: Small margin and padding</div>
+        <div class="box2">Box 2: Larger margin, padding and border</div>
+        <div class="box3">Box 3: Dashed border</div>
+        <div class="box4">Box 4: More padding than margin</div>
+        <div class="box5">Box 5: Double border</div>
+        <div class="box6">Box 6: Large padding</div>
+        <div class="box7">Box 7: Thick border</div>
+        <div class="box8">Box 8: Dotted border</div>
+
+        <h2>2. Content-box vs Border-box</h2>
+
+        <div class="width-box content-box">
+            Content-box: width is 300px
+        </div>
+
+        <div class="width-box border-box">
+            Border-box: total width is 300px
+        </div>
+
+        <h2>3. Margin Collapsing</h2>
+
+        <div class="collapse-one">
+            First div: margin-bottom is 30px
+        </div>
+
+        <div class="collapse-two">
+            Second div: margin-top is 20px
+        </div>
+
+        <p>The gap between these divs is 30px, not 50px.</p>
+
+        <h2>4. Negative Margins</h2>
+
+        <div class="overlap-one">
+            First element
+        </div>
+
+        <div class="overlap-two">
+            Second element overlaps the first
+        </div>
+    </body>
+</html>
