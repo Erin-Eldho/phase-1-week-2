@@ -18,6 +18,11 @@
     --primary-rgb: rgb(37, 99, 235);
     --primary-hsl: hsl(221.54, 83.33%, 53.33%);
     --primary-oklch: oklch(0.546 0.245 262.881);
+
+    --color-surface: #ffffff;
+    --color-border: #e2e8f0;
+    --color-recommended: #dbeafe;
+    --font-family: Arial, sans-serif;
 }
 
 [data-theme="dark"] {

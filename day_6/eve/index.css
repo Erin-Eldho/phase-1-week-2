@@ -8,7 +8,7 @@ html {
 
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: var(--font-family);
     font-size: 1.6rem;
     line-height: 1.5;
     background-color: var(--color-bg);
@@ -17,20 +17,19 @@ body {
 
 header {
     background-color: var(--color-primary);
-    padding: 2rem;
+    padding: 20px;
 }
 
 nav {
     display: flex;
     justify-content: center;
-    gap: 2rem;
     flex-wrap: wrap;
+    gap: 25px;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    padding: 0.8rem 1.2rem;
 }
 
 nav a:hover,
@@ -46,12 +45,12 @@ main {
 
 h1 {
     font-size: 3.6rem;
-    color: var(--color-primary);
+    color: var(--color-primary-darkest);
 }
 
 h2 {
     font-size: 2.4rem;
-    color: var(--color-primary);
+    color: var(--color-primary-darkest);
 }
 
 h3 {
@@ -93,7 +92,7 @@ section:first-child a {
 main section:nth-child(3) article {
     padding: 2rem;
     border-radius: 0.8rem;
-    background-color: var(--color-bg);
+    background-color: var(--color-surface);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     color: var(--color-text);
 }
