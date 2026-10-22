@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Flexbox Item Properties</title>
+
+        <style>
+            .container {
+                display: flex;
+                width: 600px;
+                border: 1px solid black;
+                margin-bottom: 20px;
+            }
+
+            .item {
+                padding: 10px;
+                background-color: lightblue;
+                border: 1px solid navy;
+                box-sizing: border-box;
+            }
+
+            .grow-0 { flex-grow: 0; }
+            .grow-1 { flex-grow: 1; }
+            .grow-2 { flex-grow: 2; }
+
+            .shrink-container {
+                width: 400px;
+            }
+
+            .shrink-0 {
+                flex-shrink: 0;
+                width: 200px;
+            }
+
+            .shrink-1 {
+                flex-shrink: 1;
+                width: 200px;
+            }
+
+            .shrink-2 {
+                flex-shrink: 2;
+                width: 200px;
+            }
+
+            .basis-container {
+                width: 600px;
+            }
+
+            .basis-0 { flex-basis: 0; }
+            .basis-auto { flex-basis: auto; }
+            .basis-200 { flex-basis: 200px; }
+            .basis-percent { flex-basis: 33.333%; }
+
+            .order-1 { order: 1; }
+            .order-2 { order: 2; }
+            .order-3 { order: 3; }
+            .order-4 { order: 4; }
+            .order-5 { order: 5; }
+
+            .align-container {
+                height: 150px;
+                align-items: flex-start;
+            }
+
+            .align-self-center {
+                align-self: center;
+            }
+        </style>
+    </head>
+    <body>
+
+        <h1>Flexbox Item Properties</h1>
+
+        <h2>1. flex-grow</h2>
+        <div class="container">
+            <div class="item grow-0">Item 1 (0)</div>
+            <div class="item grow-1">Item 2 (1)</div>
+            <div class="item grow-2">Item 3 (2)</div>
+            <div class="item grow-1">Item 4 (1)</div>
+            <div class="item grow-0">Item 5 (0)</div>
+        </div>
+
+        <h2>2. flex-shrink</h2>
+        <div class="container shrink-container">
+            <div class="item shrink-0">Shrink 0</div>
+            <div class="item shrink-1">Shrink 1</div>
+            <div class="item shrink-2">Shrink 2</div>
+        </div>
+
+        <p>
+            Items with a higher flex-shrink value reduce more of their
+            base size when space is insufficient. An item with 0 does not shrink.
+        </p>
+
+        <h2>3. flex-basis</h2>
+        <div class="container basis-container">
+            <div class="item basis-0">basis: 0</div>
+            <div class="item basis-auto">basis: auto</div>
+            <div class="item basis-200">basis: 200px</div>
+            <div class="item basis-percent">basis: 33.333%</div>
+        </div>
+
+        <p>
+            flex-basis sets an item's initial main size before free space
+            is distributed. Width sets the width of an item in a row,
+            but flex-basis takes precedence over width when it is not auto.
+        </p>
+
+        <h2>4. order</h2>
+        <div class="container">
+            <div class="item order-2">Item 1</div>
+            <div class="item order-4">Item 2</div>
+            <div class="item order-3">Item 3</div>
+            <div class="item order-5">Item 4</div>
+            <div class="item order-1">Item 5</div>
+        </div>
+
+        <h2>5. align-self</h2>
+        <div class="container align-container">
+            <div class="item">Item 1</div>
+            <div class="item align-self-center">Item 2</div>
+            <div class="item">Item 3</div>
+        </div>
+
+    </body>
+</html>
