@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fluid Typography and Spacing</title>
+        <style>                       
+            * {
+                box-sizing: border-box;
+            }
+
+            body {
+                margin: 0;
+                font-family: Arial, sans-serif;
+                font-size: clamp(1rem, 0.5vw + 0.9rem, 1.25rem);
+                line-height: 1.6;
+                color: #1e293b;
+                background-color: #f1f5f9;
+            }
+
+            header {
+                padding: clamp(1rem, 3vw, 3rem);
+                background-color: #1e3a8a;
+                color: white;
+            }
+
+            h1 {
+                font-size: clamp(2.4rem, 5vw + 1rem, 5.6rem);
+            }
+
+            h2 {
+                font-size: clamp(2rem, 3vw + 0.5rem, 3.5rem);
+            }
+
+            h3 {
+                font-size: clamp(1.6rem, 2vw + 0.5rem, 2.5rem);
+            }
+
+            h4 {
+                font-size: clamp(1.4rem, 1.5vw + 0.5rem, 2rem);
+            }
+
+            h5 {
+                font-size: clamp(1.2rem, 1vw + 0.5rem, 1.6rem);
+            }
+
+            h6 {
+                font-size: clamp(1.1rem, 0.5vw + 0.7rem, 1.4rem);
+            }
+
+            main {
+                max-width: 1100px;
+                margin: 0 auto;
+                padding: clamp(1rem, 3vw, 3rem);
+            }
+
+            section {
+                margin-bottom: clamp(1.5rem, 3vw, 3rem);
+            }
+
+            .card-container {
+                container-type: inline-size;
+            }
+
+            .card {
+                display: flex;
+                flex-direction: column;
+                gap: clamp(1rem, 2vw, 2rem);
+                padding: clamp(1rem, 3vw, 3rem);
+                background-color: white;
+                border-radius: 8px;
+            }
+
+            .card img {
+                width: 100%;
+                height: auto;
+                border-radius: 8px;
+            }
+
+            .card-content {
+                flex: 1;
+            }
+
+            @container (min-width: 500px) {
+                .card {
+                    flex-direction: row;
+                    align-items: center;
+                }
+
+                .card img {
+                    width: 40%;
+                }
+            }
+        </style>
+    </head>
+    
+    <body>
+        <header>
+            <h1>Fluid Design</h1>
+            <p>Typography and spacing that adapt to screen size.</p>
+        </header>
+
+        <main>
+            <section>
+                <h2>About fluid typography</h2>
+                <p>Fluid typography uses clamp() to scale text smoothly between a minimum and 
+                    maximum size.</p>
+
+                <h3>Benefits</h3>
+                <p>Text remains readable across different screen sizes.</p>
+
+                <h4>Responsive Design</h4>
+                <p>Spacing and typography adjust to the available space.</p>
+
+                <h5>Flexible Layouts</h5>
+                <p>Elements adapt without needing many breakpoints.</p>
+
+                <h6>Modern CSS</h6>
+                <p>CSS clamp() makes fluid sizing simple.</p>
+            </section>
+
+            <section class="card-container">
+                <article class="card">
+                    <img src="https://placehold.co/400x250" alt="Design preview">
+                    <div class="card-content">
+                        <h3>Fluid Card</h3>
+                        <p>This card changes its layout based on the width of its container.</p>
+                    </div>
+                </article>
+            </section>
+        </main>
+    </body>
+</html>

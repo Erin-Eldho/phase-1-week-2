@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Responsive Layout</title>
+        <style>         
+            * {
+                box-sizing: border-box;
+            }
+
+            body {
+                margin: 0;
+                font-family: Arial, sans-serif;
+                line-height: 1.5;
+                color: #1e293b;
+                background-color: #f1f5f9;
+            }
+
+            header {
+                padding: 15px;
+                background-color: #1e3a8a;
+                color: white;
+            }
+
+            header h1 {
+                margin-top: 0;
+                text-align: center;
+            }
+
+            .primary-nav {
+                display: flex;
+                justify-content: space-around;
+                gap: 10px;
+            }
+
+            .primary-nav a {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 10px;
+                color: white;
+                text-decoration: none;
+            }
+
+            .nav-label {
+                display: none;
+            }
+
+            .nav-icon {
+                display: inline;
+            }
+
+            .secondary-nav {
+                display: none;
+            }
+
+            main {
+                padding: 15px;
+            }
+
+            .content-grid {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .content-grid article {
+                padding: 20px;
+                background-color: white;
+                border-radius: 8px;
+            }
+
+            @media (min-width: 480px) {
+                .nav-label {
+                    display: inline;
+                }
+
+                .primary-nav a {
+                    gap: 8px;
+                }
+            }
+
+            @media (min-width: 600px) {
+                .content-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+
+            @media (min-width: 768px) {
+                header {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: 20px;
+                }
+
+                header h1 {
+                    margin: 0;
+                }
+
+                .primary-nav {
+                    justify-content: center;
+                }
+
+                .content-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+
+            @media (min-width: 900px) {
+                .content-grid {
+                    grid-template-columns: repeat(3, 1fr);
+                }
+            }
+
+            @media (min-width: 1024px) {
+                .secondary-nav {
+                    display: flex;
+                    gap: 15px;
+                }
+
+                .secondary-nav a {
+                    color: white;
+                    text-decoration: none;
+                }
+
+                .content-grid {
+                    grid-template-columns: repeat(3, 1fr);
+                }
+            }
+
+            @media (min-width: 1280px) {
+                .content-grid {
+                    grid-template-columns: repeat(4, 1fr);
+                }
+            }
+        </style>
+    </head>
+    <body>
+
+        <header>
+            <h1>My Website</h1>
+
+            <nav class="primary-nav">
+                <a href="#" aria-label="Home">
+                    <span class="nav-icon">🏠</span>
+                    <span class="nav-label">Home</span>
+                </a>
+                <a href="#" aria-label="Projects">
+                    <span class="nav-icon">📂</span>
+                    <span class="nav-label">Projects</span>
+                </a>
+                <a href="#" aria-label="About">
+                    <span class="nav-icon">🙋🏻‍♀️</span>
+                    <span class="nav-label">About</span>
+                </a>
+                <a href="#" aria-label="Contact">
+                    <span class="nav-icon">📧</span>
+                    <span class="nav-label">Contact</span>
+                </a>
+            </nav>
+
+            <nav class="secondary-nav" aria-label="Secondary navigation">
+                <a href="#">Resources</a>
+                <a href="#">Blog</a>
+                <a href="#">Help</a>
+            </nav>
+        </header>
+
+        <main>
+            <h2>Explore Our Content</h2>
+
+            <section class="content-grid">
+                <article>
+                    <h3>Project One</h3>
+                    <p>Explore the details of our first project.</p>
+                </article>
+
+                <article>
+                    <h3>Project Two</h3>
+                    <p>Discover what makes our second project unique.</p>
+                </article>
+
+                <article>
+                    <h3>Project Three</h3>
+                    <p>Learn more about our third project.</p>
+                </article>
+
+                <article>
+                    <h3>Project Four</h3>
+                    <p>Take a look at our fourth project.</p>
+                </article>
+
+                <article>
+                    <h3>Project Five</h3>
+                    <p>See the features of our fifth project.</p>
+                </article>
+
+                <article>
+                    <h3>Project Six</h3>
+                    <p>Find out more about our sixth project.</p>
+                </article>
+
+                <article>
+                    <h3>Project Seven</h3>
+                    <p>Explore our seventh project.</p>
+                </article>
+
+                <article>
+                    <h3>Project Eight</h3>
+                    <p>Discover our eighth project.</p>
+                </article>
+            </section>
+        </main>
+
+    </body>
+</html>

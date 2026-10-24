@@ -1,0 +1,179 @@
+@media print {
+    @page {
+        size: A4;
+        margin: 15mm;
+    }
+
+    header nav,
+    .sidebar,
+    button,
+    .ads,
+    input,
+    select,
+    textarea,
+    video,
+    audio,
+    iframe,
+    [role="button"] {
+        display: none !important;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+        -webkit-print-color-adjust: economy;
+        print-color-adjust: economy;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        background: white !important;
+        color: black !important;
+        font-family: Arial, sans-serif;
+        font-size: 11pt;
+        line-height: 1.4;
+    }
+
+    header {
+        padding: 0;
+        background: white !important;
+    }
+
+    main {
+        max-width: none;
+        margin: 0;
+        padding: 0;
+        background: white !important;
+    }
+
+    main > section,
+    main > section:first-child {
+        margin: 0 0 20px;
+        padding: 0;
+        background: white !important;
+        color: black !important;
+        border-radius: 0;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: black !important;
+        break-after: avoid;
+        page-break-after: avoid;
+    }
+
+    p,
+    li {
+        color: black !important;
+    }
+
+    .service-grid {
+        display: block;
+        margin: 0 0 20px;
+    }
+
+    .service-card {
+        margin: 0 0 15px;
+        padding: 12px;
+        background: white !important;
+        color: black !important;
+        border: 1px solid #999;
+        border-radius: 0;
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    .service-card h2,
+    .service-card h3 {
+        color: black !important;
+    }
+
+    .comparison {
+        margin: 20px 0;
+        background: white !important;
+        color: black !important;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed;
+        background: white !important;
+        color: black !important;
+        font-size: 9pt;
+    }
+
+    caption {
+        padding: 6px;
+        color: black !important;
+    }
+
+    th,
+    td {
+        padding: 6px;
+        background: white !important;
+        color: black !important;
+        border: 1px solid #888;
+        text-align: left;
+        overflow-wrap: anywhere;
+    }
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    .cta {
+        display: block;
+        margin: 20px 0;
+        padding: 12px;
+        background: white !important;
+        color: black !important;
+        border: 1px solid #999;
+        border-radius: 0;
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    .cta form {
+        display: none !important;
+    }
+
+    footer {
+        margin-top: 15px;
+        padding: 10px 0;
+        background: white !important;
+        color: black !important;
+        border-top: 1px solid #999;
+    }
+
+    footer a,
+    a {
+        color: black !important;
+    }
+
+    a[href^="http"]::after {
+        content: " (" attr(href) ")";
+        overflow-wrap: anywhere;
+    }
+
+    .accordion-panel,
+    .tab-panel,
+    [hidden] {
+        display: block !important;
+        visibility: visible !important;
+    }
+}

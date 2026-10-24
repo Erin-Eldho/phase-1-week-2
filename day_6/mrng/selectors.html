@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CSS Selectors</title>
+
+        <style>
+            li:nth-child(even) {
+                background-color: #f899c1;
+            }
+
+            input[type="email"] {
+                border: 2px solid blue;
+                padding: 8px;
+            }
+
+            .card.featured {
+                color: white;
+                background-color: #1f5b14;
+            }
+
+            article > p:first-of-type {
+                font-weight: bold;
+                color: midnightblue;
+            }
+
+            h2 + p {
+                border-left: 4px solid coral;
+                padding-left: 10px;
+            }
+
+            a:hover {
+                color: orange !important;
+            }
+
+            input:focus {
+                outline: 3px solid yellow;
+            }
+
+            li:first-child {
+                border-top: 3px solid maroon;
+            }
+
+            li:last-child {
+                border-bottom: 3px solid maroon;
+            }
+
+            li:nth-child(3n + 1) {
+                font-style: italic;
+            }
+
+            article h2::before {
+                content: "← ";
+                color: indigos;
+            }
+
+            article h2::after {
+                content: " →";
+                color: darkred;
+            }
+
+            a[href^="https"] {
+                color: crimson;
+                text-decoration: underline;
+            }
+
+            a:not([href^="https"]) {
+                color: darkgreen;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <main>
+                <h1>CSS Selectors</h1>
+
+                <section>
+                    <h2>List Items</h2>
+                    <ul>
+                        <li class="card">First item</li>
+                        <li>Second item</li>
+                        <li class="card featured">Third item</li>
+                        <li class="card">Fourth item</li>
+                        <li class="card featured">Fifth item</li>
+                        <li>Sixth item</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Contact Form</h2>
+                    <form>
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name">
+
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email">
+
+                        <label for="email2">Alternate Email:</label>
+                        <input type="email" id="email2" name="email2">
+                    </form>
+                </section>
+
+                <article>
+                    <h2>About Our Services</h2>
+                    <p>This is the first paragraph directly inside the article.</p>
+
+                    <div>
+                        <p>This paragraph is inside a div.</p>
+                    </div>
+
+                    <h2>Our Approach</h2>
+                    <p>This paragraph immediately follows an h2.</p>
+                    <p>This is another paragraph.</p>
+                </article>
+
+                <section>
+                    <h2>Links</h2>
+                    <p><a href="about.html">Internal link</a></p>
+                    <p><a href="https://www.example.com">External link</a></p>
+                </section>
+            </main>
+        </div>
+    </body>
+</html>

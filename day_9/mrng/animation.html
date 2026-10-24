@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CSS Keyframe Animations</title>
+        <link rel="stylesheet" href="animations.css">
+        <style> 
+            * {
+                box-sizing: border-box;
+            }
+
+            body {
+                margin: 0;
+                padding: 30px;
+                font-family: Arial, sans-serif;
+                line-height: 1.6;
+                color: #1e293b;
+                background-color: #f1f5f9;
+            }
+
+            main {
+                max-width: 900px;
+                margin: 0 auto;
+            }
+
+            section {
+                margin-bottom: 40px;
+            }
+
+            .spinner {
+                width: 40px;
+                height: 40px;
+                border: 4px solid #dbeafe;
+                border-top-color: #2563eb;
+                border-radius: 50%;
+            }
+
+            .skeleton-card {
+                max-width: 350px;
+                padding: 15px;
+                background-color: white;
+                border-radius: 8px;
+            }
+
+            .skeleton-image,
+            .skeleton-line {
+                background-color: #e2e8f0;
+                border-radius: 5px;
+            }
+
+            .skeleton-image {
+                height: 150px;
+                margin-bottom: 15px;
+            }
+
+            .skeleton-line {
+                height: 15px;
+                margin-bottom: 10px;
+            }
+
+            .skeleton-line.short {
+                width: 60%;
+            }
+
+            .entry-card {
+                padding: 20px;
+                background-color: white;
+                border-radius: 8px;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            .bell-button {
+                padding: 12px 18px;
+                border: none;
+                border-radius: 6px;
+                background-color: #2563eb;
+                color: white;
+                cursor: pointer;
+            }
+
+            .bell {
+                display: inline-block;
+                margin-right: 5px;
+            }
+
+            @media (prefers-reduced-motion: no-preference) {
+                @keyframes rotate {
+                    to {
+                        transform: rotate(360deg);
+                    }
+                }
+
+                .spinner {
+                    animation: rotate 1s linear infinite;
+                }
+
+                @keyframes shimmer {
+                    from {
+                        background-position: 100% 0;
+                    }
+
+                    to {
+                        background-position: -100% 0;
+                    }
+                }
+
+                .skeleton-image,
+                .skeleton-line {
+                    background: linear-gradient(
+                        90deg,
+                        #e2e8f0 25%,
+                        #f8fafc 50%,
+                        #e2e8f0 75%
+                    );
+                    background-size: 200% 100%;
+                    animation: shimmer 1.5s ease-in-out infinite alternate;
+                }
+
+                @keyframes slide-up {
+                    from {
+                        opacity: 0;
+                        transform: translateY(20px);
+                    }
+
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+
+                .entry-card.visible {
+                    animation: slide-up 1.0s ease-out both;
+                }
+
+                @keyframes shake {
+                    0%, 100% {
+                        transform: rotate(0);
+                    }
+
+                    25% {
+                        transform: rotate(15deg);
+                    }
+
+                    50% {
+                        transform: rotate(-15deg);
+                    }
+
+                    75% {
+                        transform: rotate(10deg);
+                    }
+                }
+
+                .bell-button:hover .bell {
+                    animation: shake 0.5s ease-in-out;
+                }
+            }
+        </style>
+    </head>
+    <body>
+
+        <main>
+            <h1>CSS Keyframe Animations</h1>
+
+            <section>
+                <h2>Loading Spinner</h2>
+                <div class="spinner" role="status" aria-label="Loading"></div>
+            </section>
+
+            <section>
+                <h2>Skeleton Loading</h2>
+                <div class="skeleton-card" aria-hidden="true">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-line"></div>
+                    <div class="skeleton-line short"></div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Card Entry Animation</h2>
+                <p>Add the class visible to the card in DevTools.</p>
+
+                <article class="entry-card">
+                    <h3>Welcome!</h3>
+                    <p>This card slides up and fades in when it becomes visible.</p>
+                </article>
+            </section>
+
+            <section>
+                <h2>Notification Bell</h2>
+                <button class="bell-button" aria-label="Notifications">
+                    <span class="bell" aria-hidden="true">🔔</span>
+                    Notifications
+                </button>
+            </section>
+        </main>
+
+    </body>
+</html>
